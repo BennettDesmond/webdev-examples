@@ -3,18 +3,18 @@
 
 // Option #1
 // Fetch JavaScript objects representing specific elements in the DOM
-let userInput = document.querySelector('#userInput1');
-let copy = document.querySelector('#copy');
-let output = document.querySelector('#output');
+// let userInput = document.querySelector('#userInput1');
+// let copy = document.querySelector('#copy');
+// let output = document.querySelector('#output');
 
-// Add an event listener on the target element
-copy.addEventListener('click', handleClick);
+// // Add an event listener on the target element
+// copy.addEventListener('click', handleClick);
 
-// Callback function to handle event
-function handleClick(event) {
-  console.log('click event', event);
-  output.textContent = userInput.value;
-}
+// // Callback function to handle event
+// function handleClick(event) {
+//   console.log('click event', event);
+//   output.textContent = userInput.value;
+// }
 
 // Option #2
 // document.getElementById('copy').onclick = () => {
@@ -31,21 +31,39 @@ function handleClick(event) {
 //   ).value;
 // };
 
+$('document').ready(() => {
+
+  $('#copy').on('click', (event) => {
+    console.log('Click event', event)
+
+    $('#output1').text($('#userInput1').val());
+  });
+
+});
+
 // Exercise #2:
 // When the user enters input text, copy the user input to the output area
 
 // Fetch JavaScript objects representing specific elements in the DOM
-let userInput2 = document.querySelector('#userInput2');
+// let userInput2 = document.querySelector('#userInput2');
 
-// Add an event listener on the target element
-userInput2.addEventListener('input', handleInput);
+// // Add an event listener on the target element
+// userInput2.addEventListener('input', handleInput);
 
-let element = document.createElement('div');
-element.setAttribute('class', 'output');
-document.querySelector('#inputEventExample').append(element);
+// let element = document.createElement('div');
+// element.setAttribute('class', 'output');
+// document.querySelector('#inputEventExample').append(element);
 
-// Callback function to handle event
-function handleInput(event) {
-  console.log('click event', event);
-  element.textContent = userInput2.value;
-}
+// // Callback function to handle event
+// function handleInput(event) {
+//   console.log('click event', event);
+//   element.textContent = userInput2.value;
+// }
+
+
+$('document').ready(() => {
+  $('#copy').on('input', () => {
+    $('#output2').text($('#userInput2').val());
+  });
+
+});
